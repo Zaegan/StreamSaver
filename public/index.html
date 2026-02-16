@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StreamSaver</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>StreamSaver</h1>
+      <p>Upload high-bitrate video to server storage with chunked retry-friendly transfer.</p>
+
+      <section class="card">
+        <h2>File upload</h2>
+        <label for="videoFile">Video file</label>
+        <input id="videoFile" type="file" accept="video/*" />
+
+        <div class="row">
+          <button id="startBtn">Start upload</button>
+          <button id="resumeBtn">Resume</button>
+        </div>
+
+        <progress id="progressBar" max="100" value="0"></progress>
+      </section>
+
+      <section class="card">
+        <h2>Live stream to disk</h2>
+        <p>Records from your camera/microphone and streams chunks directly to the server while recording.</p>
+        <div class="row">
+          <button id="startStreamBtn">Start live stream</button>
+          <button id="stopStreamBtn" disabled>Stop live stream</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <p id="status">Waiting for action.</p>
+      </section>
+
+      <section class="card">
+        <h2>Saved videos</h2>
+        <button id="refreshFilesBtn">Refresh list</button>
+        <ul id="savedFiles"></ul>
+      </section>
+    </main>
+
+    <script src="app.js" type="module"></script>
+  </body>
+</html>
